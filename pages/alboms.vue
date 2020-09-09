@@ -33,11 +33,9 @@ export default {
   display: flex;
   justify-content: center;
   &__items {
-    margin-top: 20px;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    width: 1200px;
     position: relative;
   }
 }

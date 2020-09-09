@@ -6,6 +6,15 @@
         <input type="text" v-model.trim="search" />
       </label>
     </div>
+    <div class="selects">
+      <label>
+        Search by city
+        <select class="selects__city" v-model="selectedCity">
+          <option v-for="(c,index) in cities" :key="index" :value="c">{{c}}</option>
+          <option value>not selected</option>
+        </select>
+      </label>
+    </div>
     <div class="users">
       <ul>
         <li v-for="u in users" :key="u.id">
@@ -15,15 +24,6 @@
         </li>
         <p v-if="!users.length">user not found</p>
       </ul>
-    </div>
-    <div class="selects">
-      <label>
-        Search by city
-        <select class="selects__city" v-model="selectedCity">
-          <option v-for="(c,index) in cities" :key="index" :value="c">{{c}}</option>
-          <option value>not selected</option>
-        </select>
-      </label>
     </div>
   </div>
 </template>
@@ -55,13 +55,13 @@ export default {
 
 <style lang="less" scoped>
 .input {
-  position: fixed;
-  top: 5%;
-  right: 50%;
+  // position: absolute;
+  // top: 5%;
+  // right: 50%;
 }
 .selects {
-  position: fixed;
-  top: 10%;
-  right: 50%;
+  // position: absolute;
+  // top: 10%;
+  // right: 50%;
 }
 </style>
