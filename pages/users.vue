@@ -58,16 +58,10 @@ export default {
   position: fixed;
   top: 5%;
   right: 50%;
-  &__city {
-  }
-}
-.users {
 }
 .selects {
   position: fixed;
   top: 10%;
   right: 50%;
-  &__city {
-  }
 }
 </style>

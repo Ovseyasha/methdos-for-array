@@ -39,7 +39,11 @@ export const getters = {
   },
   // alb
   getAlboms(state) {
-    return state.albums
+    return state.albums.map(item => {
+      item.user = state.users.find(u => u.id === item.userId)
+      item.photos = state.photos.filter(p => p.albumId === item.id)
+      return item
+    })
   }
 }
 export const mutations = {
