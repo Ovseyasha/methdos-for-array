@@ -7,21 +7,37 @@ export const state = () => ({
 })
 
 export const getters = {
+  // todos
   getTodos(state) {
     return state.todos
   },
   getFilterTodos: state => completed => {
     return state.todos.filter(i => i.completed === completed)
   },
+  // users
   getUsers(state) {
     return state.users
   },
+  getUsersByName: state => name => {
+    return state.users.filter(item => {
+      return item.name.toLowerCase().indexOf(name.toLowerCase()) >= 0 || item.username.toLowerCase().indexOf(name.toLowerCase()) >= 0
+    })
+  },
+  getUsersByCity: state => city => {
+    return state.users.filter(item => item.address.city === city)
+  },
+  getCities(state) {
+    return state.users.map(item => item.address.city)
+  },
+  // photos
   getPhotos(state) {
     return state.photos
   },
+  // comm
   getComments(state) {
     return state.comments
   },
+  // alb
   getAlboms(state) {
     return state.albums
   }
