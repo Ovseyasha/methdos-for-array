@@ -10,6 +10,9 @@ export const getters = {
   getTodos(state) {
     return state.todos
   },
+  getFilterTodos: state => completed => {
+    return state.todos.filter(i => i.completed === completed)
+  },
   getUsers(state) {
     return state.users
   },
